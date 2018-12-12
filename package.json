@@ -1,0 +1,19 @@
+{
+  "name": "homey-oauth2app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "config": {
+    "npmPublishTagProduction": "latest",
+    "npmPublishTagStaging": "beta"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "promise-queue": "^2.2.5"
+  }
+}
