@@ -1,6 +1,6 @@
 {
   "name": "homey-oauth2app",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
     "npmPublishTagStaging": "beta"
   },
   "dependencies": {
-    "form-data": "^2.3.3",
     "node-fetch": "^2.3.0",
     "promise-queue": "^2.2.5"
   }
