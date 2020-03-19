@@ -70,7 +70,7 @@ By default, `OAuth2Client` will work with any API that follows [RFC 6749](https:
 
 All methods starting with `on` (for example `onRequestError`) are meant to be overloaded. Overloading any other method might break in the future, so be careful.
 
-## Drivers
+## Driver
 
 Add this to your `/drivers/<driver_id>/driver.compose.json`:
 
@@ -129,6 +129,8 @@ module.exports = class MyBrandDriver extends OAuth2Driver {
 }
 ```
 
+## Device
+
 Finally, your `/drivers/<driver_id>/device.js` should look like this:
 
 ```javascript
@@ -141,6 +143,10 @@ module.exports = class MyBrandDevice extends OAuth2Device {
       .then(async state => {
         await this.setCapabilityValue('onoff', !!state.on);
       });
+  }
+
+  async onOAuth2Deleted() {
+    // Clean up here
   }
 	
 }
