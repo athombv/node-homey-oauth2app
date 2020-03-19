@@ -14,6 +14,8 @@ Then select `oauth2`.
 
 ## Usage
 
+### App
+
 In your `/app.js`, make your `Homey.App` extend `OAuth2App`:
 
 ```javascript
@@ -35,6 +37,8 @@ module.exports = class MyBrandApp extends OAuth2App {
   
 }
 ```
+
+### API Client
 
 Then create a file `/lib/MyBrandOAuth2Client` and make it extend `OAuth2Client`:
 
@@ -70,7 +74,7 @@ By default, `OAuth2Client` will work with any API that follows [RFC 6749](https:
 
 All methods starting with `on` (for example `onRequestError`) are meant to be overloaded. Overloading any other method might break in the future, so be careful.
 
-## Driver
+### Driver
 
 Add this to your `/drivers/<driver_id>/driver.compose.json`:
 
@@ -129,7 +133,7 @@ module.exports = class MyBrandDriver extends OAuth2Driver {
 }
 ```
 
-## Device
+### Device
 
 Finally, your `/drivers/<driver_id>/device.js` should look like this:
 
