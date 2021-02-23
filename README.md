@@ -2,6 +2,8 @@
 
 This module does the heavy lifting for a [Homey App](https://developer.athom.com) that talks to any OAuth2 Web API.
 
+It requires Homey Apps SDK v3.
+
 ## Installation
 
 Run 
