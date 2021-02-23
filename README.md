@@ -10,9 +10,7 @@ This module requires Homey Apps SDK v3.
 * [node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver) — Module for Zigbee drivers
 * [node-homey-rfdriver](https://github.com/athombv/node-homey-oauth2app) — Module for RF (433 Mhz, 868 MHz, Infrared) drivers
 
-## Installation
-
-Run 
+## Installation 
 
 ```
 $ npm install homey-oauth2app
