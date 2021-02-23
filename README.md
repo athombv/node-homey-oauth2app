@@ -2,7 +2,13 @@
 
 This module does the heavy lifting for a [Homey App](https://developer.athom.com) that talks to any OAuth2 Web API.
 
-It requires Homey Apps SDK v3.
+This module requires Homey Apps SDK v3.
+
+## Related Modules
+
+* [node-homey-zwavedriver](https://github.com/athombv/node-homey-zwavedriver) — Module for Z-Wave drivers
+* [node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver) — Module for Zigbee drivers
+* [node-homey-rfdriver](https://github.com/athombv/node-homey-oauth2app) — Module for RF (433 Mhz, 868 MHz, Infrared) drivers
 
 ## Installation
 
