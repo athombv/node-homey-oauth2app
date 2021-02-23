@@ -15,10 +15,8 @@ This module requires Homey Apps SDK v3.
 Run 
 
 ```
-$ homey app plugin add
+$ npm install homey-oauth2app
 ```
-
-Then select `oauth2`.
 
 ## Usage
 
