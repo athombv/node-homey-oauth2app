@@ -2,6 +2,8 @@
 
 This module does the heavy lifting for a [Homey App](https://developer.athom.com) that talks to any OAuth2 Web API.
 
+It requires Homey Apps SDK v3.
+
 ## Installation
 
 Run 
@@ -24,7 +26,7 @@ const MyBrandOAuth2Client = require('./lib/MyBrandOAuth2Client');
 
 module.exports = class MyBrandApp extends OAuth2App {
   
-  onOAuth2Init() {
+  async onOAuth2Init() {
     this.enableOAuth2Debug();
     this.setOAuth2Config({
       client: MyBrandOAuth2Client,
@@ -114,7 +116,7 @@ const { OAuth2Driver } = require('homey-oauth2app');
 
 module.exports = class MyBrandDriver extends OAuth2Driver {
   
-  onOAuth2Init() {
+  async onOAuth2Init() {
     // Register Flow Cards etc.
   }
   
