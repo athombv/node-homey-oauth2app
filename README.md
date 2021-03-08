@@ -27,16 +27,14 @@ const { OAuth2App } = require('homey-oauth2app');
 const MyBrandOAuth2Client = require('./lib/MyBrandOAuth2Client');
 
 module.exports = class MyBrandApp extends OAuth2App {
+
+  static OAUTH2_CLIENT = MyBrandOAuth2Client;
+  static OAUTH2_DEBUG = true;
   
   async onOAuth2Init() {
-    this.enableOAuth2Debug();
-    this.setOAuth2Config({
-      client: MyBrandOAuth2Client,
-      apiUrl: 'https://api.mybrand.com/v1',
-      tokenUrl: 'https://api.mybrand.com/oauth2/token',
-      authorizationUrl: 'https://auth.mybrand.com',
-      scopes: [ 'my_scope' ],
-    });    
+    await super.onOAuth2Init();
+    
+    // Do App logic here
   }
   
 }
@@ -50,6 +48,11 @@ Then create a file `/lib/MyBrandOAuth2Client` and make it extend `OAuth2Client`:
 const { OAuth2Client, OAuth2Error } = require('homey-oauth2app');
 
 module.exports = class MyBrandOAuth2Client extends OAuth2Client {
+
+  static API_URL = 'https://api.mybrand.com/v1';
+  static TOKEN_URL = 'https://api.mybrand.com/oauth2/token';
+  static AUTHORIZATION_URL = 'https://auth.mybrand.com';
+  static SCOPES = [ 'my_scope' ];
 
   // Overload what needs to be overloaded here
 
