@@ -10,7 +10,7 @@ This module requires Homey Apps SDK v3.
 * [node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver) — Module for Zigbee drivers
 * [node-homey-rfdriver](https://github.com/athombv/node-homey-oauth2app) — Module for RF (433 Mhz, 868 MHz, Infrared) drivers
 
-## Installation 
+## Installation
 
 ```
 $ npm install homey-oauth2app
@@ -27,18 +27,16 @@ const { OAuth2App } = require('homey-oauth2app');
 const MyBrandOAuth2Client = require('./lib/MyBrandOAuth2Client');
 
 module.exports = class MyBrandApp extends OAuth2App {
-  
+
+  static OAUTH2_CLIENT = MyBrandOAuth2Client; // Default: OAuth2Client
+  static OAUTH2_DEBUG = true; // Default: false
+  static OAUTH2_MULTI_SESSION = false; // Default: false
+  static OAUTH2_DRIVERS = [ 'my_driver' ]; // Default: all drivers
+
   async onOAuth2Init() {
-    this.enableOAuth2Debug();
-    this.setOAuth2Config({
-      client: MyBrandOAuth2Client,
-      apiUrl: 'https://api.mybrand.com/v1',
-      tokenUrl: 'https://api.mybrand.com/oauth2/token',
-      authorizationUrl: 'https://auth.mybrand.com',
-      scopes: [ 'my_scope' ],
-    });    
+    // Do App logic here
   }
-  
+
 }
 ```
 
@@ -48,8 +46,19 @@ Then create a file `/lib/MyBrandOAuth2Client` and make it extend `OAuth2Client`:
 
 ```javascript
 const { OAuth2Client, OAuth2Error } = require('homey-oauth2app');
+const MyOAuth2Token = require('./MyBrandOAuth2Token');
 
 module.exports = class MyBrandOAuth2Client extends OAuth2Client {
+
+  // Required:
+  static API_URL = 'https://api.mybrand.com/v1';
+  static TOKEN_URL = 'https://api.mybrand.com/oauth2/token';
+  static AUTHORIZATION_URL = 'https://auth.mybrand.com';
+  static SCOPES = [ 'my_scope' ];
+
+  // Optional:
+  static TOKEN = MyBrandOAuth2Token; // Default: OAuth2Token
+  static REDIRECT_URL = 'https://callback.athom.com/oauth2/callback'; // Default: 'https://callback.athom.com/oauth2/callback'
 
   // Overload what needs to be overloaded here
 
@@ -102,7 +111,7 @@ Add this to your `/drivers/<driver_id>/driver.compose.json`:
       "template": "add_devices"
     }
   ],
-  "repair": [ 
+  "repair": [
     {
       "id": "login_oauth2",
       "template": "login_oauth2"
@@ -117,11 +126,11 @@ Your `/drivers/<driver_id>/driver.js` should look like this:
 const { OAuth2Driver } = require('homey-oauth2app');
 
 module.exports = class MyBrandDriver extends OAuth2Driver {
-  
+
   async onOAuth2Init() {
     // Register Flow Cards etc.
   }
-  
+
   async onPairListDevices({ oAuth2Client }) {
     const things = await oAuth2Client.getThings();
     return things.map(thing => {
@@ -133,7 +142,7 @@ module.exports = class MyBrandDriver extends OAuth2Driver {
       }
     });
   }
-	
+
 }
 ```
 
@@ -145,7 +154,7 @@ Finally, your `/drivers/<driver_id>/device.js` should look like this:
 const { OAuth2Device } = require('homey-oauth2app');
 
 module.exports = class MyBrandDevice extends OAuth2Device {
-  
+
   async onOAuth2Init() {
     await this.oAuth2Client.getThingState()
       .then(async state => {
@@ -156,6 +165,6 @@ module.exports = class MyBrandDevice extends OAuth2Device {
   async onOAuth2Deleted() {
     // Clean up here
   }
-	
+
 }
 ```
