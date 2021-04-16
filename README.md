@@ -46,7 +46,7 @@ Then create a file `/lib/MyBrandOAuth2Client` and make it extend `OAuth2Client`:
 
 ```javascript
 const { OAuth2Client, OAuth2Error } = require('homey-oauth2app');
-const MyOAuth2Token = require('./MyBrandOAuth2Token');
+const MyBrandOAuth2Token = require('./MyBrandOAuth2Token');
 
 module.exports = class MyBrandOAuth2Client extends OAuth2Client {
 
