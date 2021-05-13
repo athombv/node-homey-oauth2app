@@ -10,7 +10,9 @@ on:
 
 jobs:
   deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
+    steps:
 
     - name: Setup Node.js
       uses: actions/setup-node@v1
