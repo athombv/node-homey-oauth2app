@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "concurrently \"serve build/\" \"npm run build:watch\"",
-    "build": "npm install; npm run build:clean; npm run jsdoc;",
+    "build": "npm ci; npm run build:clean; npm run jsdoc;",
     "jsdoc": "jsdoc --configure ./docs/jsdoc.json;",
     "jsdoc:clean": "rm -rf ./build",
     "jsdoc:watch": "watch \"npm run jsdoc:clean && npm run jsdoc\" lib docs \"node_modules/homey-jsdoc-template\""
