@@ -9,7 +9,7 @@ This module requires Homey Apps SDK v3.
 
 ## Documentation
 
-Read [https://athombv.github.io/node-homey-oauth2app/](https://athombv.github.io/node-homey-oauth2app/)
+Documentation is available at [https://athombv.github.io/node-homey-oauth2app/](https://athombv.github.io/node-homey-oauth2app/).
 
 ## Related Modules
 
