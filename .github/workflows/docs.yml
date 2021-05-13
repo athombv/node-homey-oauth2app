@@ -13,6 +13,7 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
 
     - name: Setup Node.js
       uses: actions/setup-node@v1
@@ -23,9 +24,7 @@ jobs:
     - name: Build
       run: npm run build
 
-    steps:
-    - uses: actions/checkout@v2
-
+    # Deploy
     - name: Deploy To GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.8.0
       with:
