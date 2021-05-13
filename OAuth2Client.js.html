@@ -727,6 +727,7 @@ class OAuth2Client extends EventEmitter {
               if (error['error']) return error['error'];
               if (error['message']) return error['message'];
             }
+            return String(error);
           });
           if (errorStrings.length) throw new OAuth2Error(errorStrings.join(', '), response.status);
         }
