@@ -6,7 +6,7 @@ name: Deploy Documentation To GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ production ]
 
 jobs:
   deploy:
