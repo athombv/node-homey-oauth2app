@@ -4,6 +4,10 @@ This module does the heavy lifting for a [Homey App](https://developer.athom.com
 
 This module requires Homey Apps SDK v3.
 
+## Documentation
+
+Read [https://athombv.github.io/node-homey-oauth2app/](https://athombv.github.io/node-homey-oauth2app/)
+
 ## Related Modules
 
 * [node-homey-zwavedriver](https://github.com/athombv/node-homey-zwavedriver) — Module for Z-Wave drivers
