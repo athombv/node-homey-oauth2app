@@ -1,5 +1,8 @@
 # Homey OAuth2
 
+[![npm](https://img.shields.io/npm/v/homey-oauth2app)](https://www.npmjs.com/package/homey-oauth2app) [![Lint](https://github.com/athombv/node-homey-oauth2app/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/lint.yml) [![NPM](https://github.com/athombv/node-homey-oauth2app/actions/workflows/deploy.yml/badge.svg)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/deploy.yml) [![Deploy Documentation To GitHub Pages](https://github.com/athombv/node-homey-oauth2app/actions/workflows/docs.yml/badge.svg?branch=master)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/docs.yml)
+
+
 This module does the heavy lifting for a [Homey App](https://developer.athom.com) that talks to any OAuth2 Web API.
 
 This module requires Homey Apps SDK v3.
