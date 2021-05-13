@@ -156,7 +156,7 @@ module.exports = class MyBrandDriver extends OAuth2Driver {
   }
 
   async onPairListDevices({ oAuth2Client }) {
-    const things = await oAuth2Client.getThings();
+    const things = await oAuth2Client.getThings({ color: 'red' });
     return things.map(thing => {
       return {
         name: thing.name,
