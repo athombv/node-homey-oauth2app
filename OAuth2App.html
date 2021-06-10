@@ -4,20 +4,75 @@
   <meta charset="utf-8">
   <title>OAuth2App - Homey OAuth2</title>
 
-  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png" />
-  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png" />
-  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png" />
+  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png"/>
+  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png"/>
   <link rel="preload" as="image" href="images/logo.png">
   <link rel="preload" href="styles/homey.min.css" as="style">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="styles/atom-one-light.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="styles/homey.min.css">
+
+  <!-- preload javascript -->
+  <link rel="preload" as="script" href="scripts/ready.js">
+  <link rel="preload" as="script" href="scripts/navigation.js">
+  <link rel="preload" as="script" href="scripts/toc.js">
+  <link rel="preload" as="script" href="scripts/table.js">
+  <link rel="preload" as="script" href="scripts/hash-link.js">
+  <link rel="preload" as="script" href="scripts/docs-nav.js">
 </head>
 
 <body>
 <div class="container">
+  <div class="container__docs-nav">
+    <div class="docs-nav">
+      <button data-docs-nav-toggle class="docs-nav__button" title="All documentation"><span
+          class="docs-nav__button-icon --mask"></span></button>
+      <nav data-docs-nav-menu class="docs-nav__menu component">
+        <div class="docs-nav__banner trim">
+          <h2>Homey Developers</h2>
+        </div>
+        <div class="docs-nav__columns">
+          <div class="docs-nav__column trim">
+            <h3>Homey Apps SDK</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://apps.developer.homey.app/">Documentation</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://apps-sdk-v3.developer.homey.app/">Reference</a></li>
+            </ul>
+            <h3>Homey Web API</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://api.developer.homey.app/">Documentation</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-api/">Reference</a></li>
+            </ul>
+            <h3>Tools</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://tools.developer.homey.app/">Developer Tools</a></li>
+            </ul>
+          </div>
+          <div class="docs-nav__column trim">
+            <h3>Node.js Modules</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zigbeedriver/">Homey
+                  ZigbeeDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zwavedriver/">Homey
+                  ZWaveDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-rfdriver/">Homey RFDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-log/">Homey Log</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-zigbee-clusters/">Zigbee Clusters</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-oauth2app/">Homey OAuth2</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
   <nav class="navigation container__navigation component">
     <header class="navigation__header">
                 <div class="navigation__logo"><a href="index.html"><img class="display-block" src="images/logo.png" width="40" height="40" alt="Homey"></a></div>
@@ -26,7 +81,7 @@
              </header><div class="navigation__content" data-navigation-target><div class="navigation__search search">
             <input title="filter" placeholder="Filter..." data-navigation-search class="search__input" type="search">
             <button data-navigation-search-reset class="search__reset --mask" type="button" title="Reset"></button>
-           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div class="navigation__menu trim"><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="oauth2app" class="nav-group__item"><a href="OAuth2App.html"> OAuth2App</a></li><li data-lvl="0" data-search-key="oauth2client" class="nav-group__item"><a href="OAuth2Client.html"> OAuth2Client</a></li><li data-lvl="0" data-search-key="oauth2device" class="nav-group__item"><a href="OAuth2Device.html"> OAuth2Device</a></li><li data-lvl="0" data-search-key="oauth2driver" class="nav-group__item"><a href="OAuth2Driver.html"> OAuth2Driver</a></li><li data-lvl="0" data-search-key="oauth2error" class="nav-group__item"><a href="OAuth2Error.html"> OAuth2Error</a></li><li data-lvl="0" data-search-key="oauth2token" class="nav-group__item"><a href="OAuth2Token.html"> OAuth2Token</a></li><li data-lvl="0" data-search-key="oauth2util" class="nav-group__item"><a href="OAuth2Util.html"> OAuth2Util</a></li></ul></nav></div></div></div>
+           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div data-navigation class="navigation__menu trim"><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="oauth2app" class="nav-group__item"><a href="OAuth2App.html"> OAuth2App</a></li><li data-lvl="0" data-search-key="oauth2client" class="nav-group__item"><a href="OAuth2Client.html"> OAuth2Client</a></li><li data-lvl="0" data-search-key="oauth2device" class="nav-group__item"><a href="OAuth2Device.html"> OAuth2Device</a></li><li data-lvl="0" data-search-key="oauth2driver" class="nav-group__item"><a href="OAuth2Driver.html"> OAuth2Driver</a></li><li data-lvl="0" data-search-key="oauth2error" class="nav-group__item"><a href="OAuth2Error.html"> OAuth2Error</a></li><li data-lvl="0" data-search-key="oauth2token" class="nav-group__item"><a href="OAuth2Token.html"> OAuth2Token</a></li><li data-lvl="0" data-search-key="oauth2util" class="nav-group__item"><a href="OAuth2Util.html"> OAuth2Util</a></li></ul></nav></div></div></div>
   </nav>
 
   <main id="main" class="main container__main">
@@ -47,7 +102,9 @@
     <div class="flex">
       <div class="main__center">
         <div class="main__content align-baseline">
-          <section>
+          
+
+<section>
   <header>
     
       <h2 class="display-none">
@@ -109,7 +166,7 @@
       
       
 <section id="OAUTH2_CLIENT" class="method component trim">
-  <h3 class="method__name">OAUTH2_CLIENT</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#OAUTH2_CLIENT"></a>OAUTH2_CLIENT</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>OAUTH2_CLIENT<span class="function__type-signature">: <a href="OAuth2Client.html">OAuth2Client</a></span>
   </span>
@@ -145,7 +202,7 @@
       
       
 <section id="OAUTH2_DEBUG" class="method component trim">
-  <h3 class="method__name">OAUTH2_DEBUG</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#OAUTH2_DEBUG"></a>OAUTH2_DEBUG</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>OAUTH2_DEBUG<span class="function__type-signature">: boolean</span>
   </span>
@@ -181,7 +238,7 @@
       
       
 <section id="OAUTH2_DRIVERS" class="method component trim">
-  <h3 class="method__name">OAUTH2_DRIVERS</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#OAUTH2_DRIVERS"></a>OAUTH2_DRIVERS</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>OAUTH2_DRIVERS<span class="function__type-signature">: Array.&lt;string></span>
   </span>
@@ -223,7 +280,7 @@ Make sure to exclude those drivers from this array.</p>
       
       
 <section id="OAUTH2_MULTI_SESSION" class="method component trim">
-  <h3 class="method__name">OAUTH2_MULTI_SESSION</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#OAUTH2_MULTI_SESSION"></a>OAUTH2_MULTI_SESSION</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>OAUTH2_MULTI_SESSION<span class="function__type-signature">: boolean</span>
   </span>
@@ -272,7 +329,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">checkHasConfig</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#checkHasConfig"></a>checkHasConfig</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>checkHasConfig<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -449,7 +506,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">checkHasOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#checkHasOAuth2Client"></a>checkHasOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>checkHasOAuth2Client<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -664,7 +721,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">createOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#createOAuth2Client"></a>createOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>createOAuth2Client<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  *</span>
@@ -893,7 +950,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">deleteOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#deleteOAuth2Client"></a>deleteOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>deleteOAuth2Client<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -1108,7 +1165,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">disableOAuth2Debug</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#disableOAuth2Debug"></a>disableOAuth2Debug</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>disableOAuth2Debug<span class="function__parameters">()</span><span class="function__type-signature"></span>
@@ -1131,7 +1188,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">enableOAuth2Debug</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#enableOAuth2Debug"></a>enableOAuth2Debug</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>enableOAuth2Debug<span class="function__parameters">()</span><span class="function__type-signature"></span>
@@ -1154,7 +1211,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">getConfig</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getConfig"></a>getConfig</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getConfig<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  *</span>
@@ -1345,7 +1402,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">getFirstSavedOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getFirstSavedOAuth2Client"></a>getFirstSavedOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getFirstSavedOAuth2Client<span class="function__parameters">()</span><span class="function__type-signature">:  <a href="OAuth2Client.html">OAuth2Client</a></span>
@@ -1417,7 +1474,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">getOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getOAuth2Client"></a>getOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getOAuth2Client<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  <a href="OAuth2Client.html">OAuth2Client</a></span>
@@ -1646,7 +1703,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">getOAuth2Devices</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getOAuth2Devices"></a>getOAuth2Devices</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>getOAuth2Devices<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  array</span>
@@ -1875,7 +1932,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">getSavedOAuth2Sessions</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getSavedOAuth2Sessions"></a>getSavedOAuth2Sessions</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getSavedOAuth2Sessions<span class="function__parameters">()</span><span class="function__type-signature">:  object</span>
@@ -1947,7 +2004,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">onInit</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onInit"></a>onInit</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onInit<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -2019,7 +2076,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">onOAuth2Init</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onOAuth2Init"></a>onOAuth2Init</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onOAuth2Init<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -2091,7 +2148,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">onShouldDeleteSession</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onShouldDeleteSession"></a>onShouldDeleteSession</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onShouldDeleteSession<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;boolean></span>
@@ -2320,7 +2377,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">saveOAuth2Client</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#saveOAuth2Client"></a>saveOAuth2Client</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>saveOAuth2Client<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -2573,7 +2630,7 @@ Make sure to exclude those drivers from this array.</p>
   
 
   
-  <h3 class="method__name">setOAuth2Config</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#setOAuth2Config"></a>setOAuth2Config</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>setOAuth2Config<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -3137,7 +3194,7 @@ For apps using multiple clients, a configId can be provided.</p>
   
 
   
-  <h3 class="method__name">tryCleanSession</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#tryCleanSession"></a>tryCleanSession</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>tryCleanSession<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -3354,6 +3411,7 @@ For apps using multiple clients, a configId can be provided.</p>
   </article>
 
 </section>
+
         </div>
         <div class="main__index">
           
@@ -3495,6 +3553,8 @@ For apps using multiple clients, a configId can be provided.</p>
 <script src="scripts/navigation.js"></script>
 <script src="scripts/toc.js"></script>
 <script src="scripts/table.js"></script>
+<script src="scripts/hash-link.js"></script>
+<script src="scripts/docs-nav.js"></script>
 
 <link type="text/css" rel="stylesheet" href="styles/atom-one-light.css">
 <script src="scripts/highlight.min.js"></script>

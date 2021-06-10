@@ -4,20 +4,75 @@
   <meta charset="utf-8">
   <title>OAuth2Client - Homey OAuth2</title>
 
-  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png" />
-  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png" />
-  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png" />
+  <meta property="og:image" content="https://etc.athom.com/logo/white/256.png"/>
+  <link rel="icon" href="https://etc.athom.com/logo/transparent/128.png"/>
+  <link rel="icon" type="image/png" href="https://etc.athom.com/logo/transparent/128.png"/>
   <link rel="preload" as="image" href="images/logo.png">
   <link rel="preload" href="styles/homey.min.css" as="style">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="styles/atom-one-light.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto:wght@100;300;400;500;700&display=swap"
+    rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="styles/homey.min.css">
+
+  <!-- preload javascript -->
+  <link rel="preload" as="script" href="scripts/ready.js">
+  <link rel="preload" as="script" href="scripts/navigation.js">
+  <link rel="preload" as="script" href="scripts/toc.js">
+  <link rel="preload" as="script" href="scripts/table.js">
+  <link rel="preload" as="script" href="scripts/hash-link.js">
+  <link rel="preload" as="script" href="scripts/docs-nav.js">
 </head>
 
 <body>
 <div class="container">
+  <div class="container__docs-nav">
+    <div class="docs-nav">
+      <button data-docs-nav-toggle class="docs-nav__button" title="All documentation"><span
+          class="docs-nav__button-icon --mask"></span></button>
+      <nav data-docs-nav-menu class="docs-nav__menu component">
+        <div class="docs-nav__banner trim">
+          <h2>Homey Developers</h2>
+        </div>
+        <div class="docs-nav__columns">
+          <div class="docs-nav__column trim">
+            <h3>Homey Apps SDK</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://apps.developer.homey.app/">Documentation</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://apps-sdk-v3.developer.homey.app/">Reference</a></li>
+            </ul>
+            <h3>Homey Web API</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://api.developer.homey.app/">Documentation</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-api/">Reference</a></li>
+            </ul>
+            <h3>Tools</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://tools.developer.homey.app/">Developer Tools</a></li>
+            </ul>
+          </div>
+          <div class="docs-nav__column trim">
+            <h3>Node.js Modules</h3>
+            <ul class="docs-nav__list">
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zigbeedriver/">Homey
+                  ZigbeeDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-zwavedriver/">Homey
+                  ZWaveDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-rfdriver/">Homey RFDriver</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-log/">Homey Log</a></li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-zigbee-clusters/">Zigbee Clusters</a>
+              </li>
+              <li class="docs-nav__item"><a target="_blank" href="https://athombv.github.io/node-homey-oauth2app/">Homey OAuth2</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
   <nav class="navigation container__navigation component">
     <header class="navigation__header">
                 <div class="navigation__logo"><a href="index.html"><img class="display-block" src="images/logo.png" width="40" height="40" alt="Homey"></a></div>
@@ -26,7 +81,7 @@
              </header><div class="navigation__content" data-navigation-target><div class="navigation__search search">
             <input title="filter" placeholder="Filter..." data-navigation-search class="search__input" type="search">
             <button data-navigation-search-reset class="search__reset --mask" type="button" title="Reset"></button>
-           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div class="navigation__menu trim"><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="oauth2app" class="nav-group__item"><a href="OAuth2App.html"> OAuth2App</a></li><li data-lvl="0" data-search-key="oauth2client" class="nav-group__item"><a href="OAuth2Client.html"> OAuth2Client</a></li><li data-lvl="0" data-search-key="oauth2device" class="nav-group__item"><a href="OAuth2Device.html"> OAuth2Device</a></li><li data-lvl="0" data-search-key="oauth2driver" class="nav-group__item"><a href="OAuth2Driver.html"> OAuth2Driver</a></li><li data-lvl="0" data-search-key="oauth2error" class="nav-group__item"><a href="OAuth2Error.html"> OAuth2Error</a></li><li data-lvl="0" data-search-key="oauth2token" class="nav-group__item"><a href="OAuth2Token.html"> OAuth2Token</a></li><li data-lvl="0" data-search-key="oauth2util" class="nav-group__item"><a href="OAuth2Util.html"> OAuth2Util</a></li></ul></nav></div></div></div>
+           </div><div data-navigation-scroll class="navigation__scroll scroll trim"><div data-navigation class="navigation__menu trim"><nav class="nav-group"><h3 class="nav-group__title">Classes</h3><ul class="nav-group__list"><li data-lvl="0" data-search-key="oauth2app" class="nav-group__item"><a href="OAuth2App.html"> OAuth2App</a></li><li data-lvl="0" data-search-key="oauth2client" class="nav-group__item"><a href="OAuth2Client.html"> OAuth2Client</a></li><li data-lvl="0" data-search-key="oauth2device" class="nav-group__item"><a href="OAuth2Device.html"> OAuth2Device</a></li><li data-lvl="0" data-search-key="oauth2driver" class="nav-group__item"><a href="OAuth2Driver.html"> OAuth2Driver</a></li><li data-lvl="0" data-search-key="oauth2error" class="nav-group__item"><a href="OAuth2Error.html"> OAuth2Error</a></li><li data-lvl="0" data-search-key="oauth2token" class="nav-group__item"><a href="OAuth2Token.html"> OAuth2Token</a></li><li data-lvl="0" data-search-key="oauth2util" class="nav-group__item"><a href="OAuth2Util.html"> OAuth2Util</a></li></ul></nav></div></div></div>
   </nav>
 
   <main id="main" class="main container__main">
@@ -47,7 +102,9 @@
     <div class="flex">
       <div class="main__center">
         <div class="main__content align-baseline">
-          <section>
+          
+
+<section>
   <header>
     
       <h2 class="display-none">
@@ -109,7 +166,7 @@
       
       
 <section id="API_URL" class="method component trim">
-  <h3 class="method__name">API_URL</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#API_URL"></a>API_URL</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>API_URL<span class="function__type-signature">: string</span>
   </span>
@@ -145,7 +202,7 @@
       
       
 <section id="AUTHORIZATION_URL" class="method component trim">
-  <h3 class="method__name">AUTHORIZATION_URL</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#AUTHORIZATION_URL"></a>AUTHORIZATION_URL</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>AUTHORIZATION_URL<span class="function__type-signature">: string</span>
   </span>
@@ -181,7 +238,7 @@
       
       
 <section id="REDIRECT_URL" class="method component trim">
-  <h3 class="method__name">REDIRECT_URL</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#REDIRECT_URL"></a>REDIRECT_URL</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>REDIRECT_URL<span class="function__type-signature">: string</span>
   </span>
@@ -217,7 +274,7 @@
       
       
 <section id="SCOPES" class="method component trim">
-  <h3 class="method__name">SCOPES</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#SCOPES"></a>SCOPES</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>SCOPES<span class="function__type-signature">: Array.&lt;string></span>
   </span>
@@ -253,7 +310,7 @@
       
       
 <section id="TOKEN" class="method component trim">
-  <h3 class="method__name">TOKEN</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#TOKEN"></a>TOKEN</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>TOKEN<span class="function__type-signature">: <a href="OAuth2Token.html">OAuth2Token</a></span>
   </span>
@@ -289,7 +346,7 @@
       
       
 <section id="TOKEN_URL" class="method component trim">
-  <h3 class="method__name">TOKEN_URL</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#TOKEN_URL"></a>TOKEN_URL</h3>
   <span class="method__function function">
     <span class="function__type-signature"></span>TOKEN_URL<span class="function__type-signature">: string</span>
   </span>
@@ -338,7 +395,7 @@
   
 
   
-  <h3 class="method__name">debug</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#debug"></a>debug</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>debug<span class="function__parameters">(&hellip;<span class="function__parameter">props</span>)</span><span class="function__type-signature"></span>
@@ -468,7 +525,7 @@
   
 
   
-  <h3 class="method__name">delete</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#delete"></a>delete</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>delete<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -735,7 +792,7 @@
   
 
   
-  <h3 class="method__name">destroy</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#destroy"></a>destroy</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>destroy<span class="function__parameters">()</span><span class="function__type-signature"></span>
@@ -797,7 +854,7 @@
   
 
   
-  <h3 class="method__name">error</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#error"></a>error</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>error<span class="function__parameters">(&hellip;<span class="function__parameter">props</span>)</span><span class="function__type-signature"></span>
@@ -927,7 +984,7 @@
   
 
   
-  <h3 class="method__name">get</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#get"></a>get</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>get<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -1194,7 +1251,7 @@
   
 
   
-  <h3 class="method__name">getAuthorizationUrl</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getAuthorizationUrl"></a>getAuthorizationUrl</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getAuthorizationUrl<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  string</span>
@@ -1423,7 +1480,7 @@
   
 
   
-  <h3 class="method__name">getTitle</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getTitle"></a>getTitle</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getTitle<span class="function__parameters">()</span><span class="function__type-signature">:  string</span>
@@ -1495,7 +1552,7 @@
   
 
   
-  <h3 class="method__name">getToken</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getToken"></a>getToken</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>getToken<span class="function__parameters">()</span><span class="function__type-signature">:  string|null</span>
@@ -1570,7 +1627,7 @@
   
 
   
-  <h3 class="method__name">getTokenByCode</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getTokenByCode"></a>getTokenByCode</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>getTokenByCode<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;null></span>
@@ -1761,7 +1818,7 @@
   
 
   
-  <h3 class="method__name">getTokenByCredentials</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#getTokenByCredentials"></a>getTokenByCredentials</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>getTokenByCredentials<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;null></span>
@@ -1990,7 +2047,7 @@
   
 
   
-  <h3 class="method__name">init</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#init"></a>init</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>init<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -2066,7 +2123,7 @@
   
 
   
-  <h3 class="method__name">log</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#log"></a>log</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>log<span class="function__parameters">(&hellip;<span class="function__parameter">props</span>)</span><span class="function__type-signature"></span>
@@ -2196,7 +2253,7 @@
   
 
   
-  <h3 class="method__name">onBuildRequest</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onBuildRequest"></a>onBuildRequest</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onBuildRequest<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;{opts: object, url: string}></span>
@@ -2581,7 +2638,7 @@
   
 
   
-  <h3 class="method__name">onGetOAuth2SessionInformation</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onGetOAuth2SessionInformation"></a>onGetOAuth2SessionInformation</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onGetOAuth2SessionInformation<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;{id: *, title: null}></span>
@@ -2657,7 +2714,7 @@
   
 
   
-  <h3 class="method__name">onGetTokenByCode</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onGetTokenByCode"></a>onGetTokenByCode</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onGetTokenByCode<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;<a href="OAuth2Token.html">OAuth2Token</a>></span>
@@ -2852,7 +2909,7 @@
   
 
   
-  <h3 class="method__name">onGetTokenByCredentials</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onGetTokenByCredentials"></a>onGetTokenByCredentials</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onGetTokenByCredentials<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;<a href="OAuth2Token.html">OAuth2Token</a>></span>
@@ -3085,7 +3142,7 @@
   
 
   
-  <h3 class="method__name">onHandleAuthorizationURL</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleAuthorizationURL"></a>onHandleAuthorizationURL</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>onHandleAuthorizationURL<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  string</span>
@@ -3314,7 +3371,7 @@
   
 
   
-  <h3 class="method__name">onHandleAuthorizationURLScopes</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleAuthorizationURLScopes"></a>onHandleAuthorizationURLScopes</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>onHandleAuthorizationURLScopes<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  *</span>
@@ -3509,7 +3566,7 @@
   
 
   
-  <h3 class="method__name">onHandleGetTokenByCodeError</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleGetTokenByCodeError"></a>onHandleGetTokenByCodeError</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleGetTokenByCodeError<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -3704,7 +3761,7 @@
   
 
   
-  <h3 class="method__name">onHandleGetTokenByCodeResponse</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleGetTokenByCodeResponse"></a>onHandleGetTokenByCodeResponse</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleGetTokenByCodeResponse<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -3899,7 +3956,7 @@
   
 
   
-  <h3 class="method__name">onHandleNotOK</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleNotOK"></a>onHandleNotOK</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleNotOK<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;Error></span>
@@ -4203,7 +4260,7 @@
   
 
   
-  <h3 class="method__name">onHandleRefreshTokenError</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleRefreshTokenError"></a>onHandleRefreshTokenError</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleRefreshTokenError<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -4394,7 +4451,7 @@
   
 
   
-  <h3 class="method__name">onHandleRefreshTokenResponse</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleRefreshTokenResponse"></a>onHandleRefreshTokenResponse</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleRefreshTokenResponse<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;<a href="OAuth2Token.html">OAuth2Token</a>></span>
@@ -4585,7 +4642,7 @@
   
 
   
-  <h3 class="method__name">onHandleResponse</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleResponse"></a>onHandleResponse</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleResponse<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;(*|undefined)></span>
@@ -4932,7 +4989,7 @@
   
 
   
-  <h3 class="method__name">onHandleResult</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onHandleResult"></a>onHandleResult</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onHandleResult<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -5236,7 +5293,7 @@
   
 
   
-  <h3 class="method__name">onInit</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onInit"></a>onInit</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onInit<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -5312,7 +5369,7 @@
   
 
   
-  <h3 class="method__name">onIsRateLimited</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onIsRateLimited"></a>onIsRateLimited</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onIsRateLimited<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;boolean></span>
@@ -5545,7 +5602,7 @@
   
 
   
-  <h3 class="method__name">onRefreshToken</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onRefreshToken"></a>onRefreshToken</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onRefreshToken<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;<a href="OAuth2Token.html">OAuth2Token</a>></span>
@@ -5621,7 +5678,7 @@
   
 
   
-  <h3 class="method__name">onRequestError</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onRequestError"></a>onRequestError</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onRequestError<span class="function__parameters">(<span class="function__parameter">arg</span>)</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -5812,7 +5869,7 @@
   
 
   
-  <h3 class="method__name">onRequestHeaders</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onRequestHeaders"></a>onRequestHeaders</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onRequestHeaders<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;Object></span>
@@ -6003,7 +6060,7 @@
   
 
   
-  <h3 class="method__name">onRequestQuery</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onRequestQuery"></a>onRequestQuery</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onRequestQuery<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;Object></span>
@@ -6198,7 +6255,7 @@
   
 
   
-  <h3 class="method__name">onRequestResponse</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onRequestResponse"></a>onRequestResponse</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onRequestResponse<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;(void|*)></span>
@@ -6530,7 +6587,7 @@
   
 
   
-  <h3 class="method__name">onShouldRefreshToken</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onShouldRefreshToken"></a>onShouldRefreshToken</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onShouldRefreshToken<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;boolean></span>
@@ -6720,7 +6777,7 @@
   
 
   
-  <h3 class="method__name">onUninit</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#onUninit"></a>onUninit</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>onUninit<span class="function__parameters">()</span><span class="function__type-signature">:  Promise.&lt;void></span>
@@ -6796,7 +6853,7 @@
   
 
   
-  <h3 class="method__name">patch</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#patch"></a>patch</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>patch<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -7139,7 +7196,7 @@
   
 
   
-  <h3 class="method__name">post</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#post"></a>post</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>post<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -7482,7 +7539,7 @@
   
 
   
-  <h3 class="method__name">put</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#put"></a>put</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>put<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;*></span>
@@ -7825,7 +7882,7 @@
   
 
   
-  <h3 class="method__name">refreshToken</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#refreshToken"></a>refreshToken</h3>
   <span class="method__function function">
     
     <span class="function__type-signature">(async) </span>refreshToken<span class="function__parameters">(&hellip;<span class="function__parameter">args</span>)</span><span class="function__type-signature">:  Promise.&lt;(undefined|void|null)></span>
@@ -7970,7 +8027,7 @@
   
 
   
-  <h3 class="method__name">save</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#save"></a>save</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>save<span class="function__parameters">()</span><span class="function__type-signature"></span>
@@ -8032,7 +8089,7 @@
   
 
   
-  <h3 class="method__name">setTitle</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#setTitle"></a>setTitle</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>setTitle<span class="function__parameters">(<span class="function__parameter">title</span>)</span><span class="function__type-signature"></span>
@@ -8155,7 +8212,7 @@
   
 
   
-  <h3 class="method__name">setToken</h3>
+  <h3 class="method__name"><a data-hash-link class="method__hash-link" href="#setToken"></a>setToken</h3>
   <span class="method__function function">
     
     <span class="function__type-signature"></span>setToken<span class="function__parameters">(<span class="function__parameter">args</span>)</span><span class="function__type-signature"></span>
@@ -8334,6 +8391,7 @@
   </article>
 
 </section>
+
         </div>
         <div class="main__index">
           
@@ -8579,6 +8637,8 @@
 <script src="scripts/navigation.js"></script>
 <script src="scripts/toc.js"></script>
 <script src="scripts/table.js"></script>
+<script src="scripts/hash-link.js"></script>
+<script src="scripts/docs-nav.js"></script>
 
 <link type="text/css" rel="stylesheet" href="styles/atom-one-light.css">
 <script src="scripts/highlight.min.js"></script>
