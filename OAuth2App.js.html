@@ -395,11 +395,15 @@ class OAuth2App extends Homey.App {
   } = {}) {
     // remove from storage
     const savedSessions = this.getSavedOAuth2Sessions();
-    delete savedSessions[sessionId];
-    this.homey.settings.set(SETTINGS_KEY, savedSessions);
+    const savedSession = savedSessions[sessionId];
+    if (savedSession
+     &amp;&amp; savedSession.configId === configId) {
+      delete savedSessions[sessionId];
+      this.homey.settings.set(SETTINGS_KEY, savedSessions);
 
-    // remove from memory
-    delete this[sClients][configId][sessionId];
+      // remove from memory
+      delete this[sClients][configId][sessionId];
+    }
   }
 
   /**
@@ -427,7 +431,7 @@ class OAuth2App extends Homey.App {
 
       const {
         token: Token,
-      } = this.getConfig();
+      } = this.getConfig({ configId });
 
       const client = this.createOAuth2Client({
         sessionId,
@@ -501,7 +505,10 @@ class OAuth2App extends Homey.App {
     configId = 'default',
   }) {
     Promise.resolve().then(async () => {
-      const shouldDeleteSession = await this.onShouldDeleteSession({ sessionId });
+      const shouldDeleteSession = await this.onShouldDeleteSession({
+        sessionId,
+        configId,
+      });
       if (shouldDeleteSession) {
         this.log(`Deleting session ${configId} ${sessionId}...`);
         this.deleteOAuth2Client({
