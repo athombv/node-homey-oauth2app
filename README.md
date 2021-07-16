@@ -1,7 +1,9 @@
-# Homey OAuth2
+<header>
 
+# Homey OAuth2
 [![npm](https://img.shields.io/npm/v/homey-oauth2app)](https://www.npmjs.com/package/homey-oauth2app) [![Lint](https://github.com/athombv/node-homey-oauth2app/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/lint.yml) [![NPM](https://github.com/athombv/node-homey-oauth2app/actions/workflows/deploy.yml/badge.svg)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/deploy.yml) [![Deploy Documentation To GitHub Pages](https://github.com/athombv/node-homey-oauth2app/actions/workflows/docs.yml/badge.svg?branch=master)](https://github.com/athombv/node-homey-oauth2app/actions/workflows/docs.yml)
 
+</header>
 
 This module does the heavy lifting for a [Homey App](https://developer.athom.com) that talks to any OAuth2 Web API.
 
@@ -13,10 +15,10 @@ Documentation is available at [https://athombv.github.io/node-homey-oauth2app/](
 
 ## Related Modules
 
-* [node-homey-zwavedriver](https://github.com/athombv/node-homey-zwavedriver) — Module for Z-Wave drivers
-* [node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver) — Module for Zigbee drivers
-* [node-homey-rfdriver](https://github.com/athombv/node-homey-oauth2app) — Module for RF (433 Mhz, 868 MHz, Infrared) drivers
-* [node-homey-log](https://github.com/athombv/node-homey-log) — Module to log unhandled errors to Sentry
+* [node-homey-zwavedriver](https://athombv.github.io/node-homey-zwavedriver) — Module for Z-Wave drivers
+* [node-homey-zigbeedriver](https://athombv.github.io/node-homey-zigbeedriver) — Module for Zigbee drivers
+* [node-homey-rfdriver](https://athombv.github.io/node-homey-oauth2app) — Module for RF (433 Mhz, 868 MHz, Infrared) drivers
+* [node-homey-log](https://athombv.github.io/node-homey-log) — Module to log unhandled errors to Sentry
 
 ## Installation
 
