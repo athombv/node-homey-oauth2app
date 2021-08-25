@@ -670,7 +670,7 @@ class OAuth2Client extends EventEmitter {
     body.append('scope', this._scopes.join(' '));
 
     if (this._clientId) {
-      body.append('client_secret', this._clientId);
+      body.append('client_id', this._clientId);
     }
 
     if (this._clientSecret) {
