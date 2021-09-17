@@ -183,7 +183,7 @@ class OAuth2Driver extends Homey.Driver {
 
     const onShowViewLoginCredentials = () => {
       if (OAuth2SessionId !== '$new') {
-        socket.nextView();
+        socket.nextView().catch(this.error);
       }
     };
 
@@ -212,7 +212,7 @@ class OAuth2Driver extends Homey.Driver {
      */
     const onShowViewLoginOAuth2 = async () => {
       if (OAuth2SessionId !== '$new') {
-        socket.emit('authorized');
+        socket.emit('authorized').catch(this.error);
         return;
       }
 
@@ -221,7 +221,7 @@ class OAuth2Driver extends Homey.Driver {
         const oAuth2Callback = await this.homey.cloud.createOAuth2Callback(oAuth2AuthorizationUrl);
         oAuth2Callback
           .on('url', url => {
-            socket.emit('url', url);
+            socket.emit('url', url).catch(this.error);
           })
           .on('code', code => {
             client.getTokenByCode({ code })
@@ -241,14 +241,14 @@ class OAuth2Driver extends Homey.Driver {
                 client.setTitle({ title });
                 client.setToken({ token });
 
-                socket.emit('authorized');
+                socket.emit('authorized').catch(this.error);
               })
               .catch(err => {
-                socket.emit('error', err.message || err.toString());
+                socket.emit('error', err.message || err.toString()).catch(this.error);
               });
           });
       } catch (err) {
-        socket.emit('error', err.message || err.toString());
+        socket.emit('error', err.message || err.toString()).catch(this.error);
       }
     };
 
@@ -393,7 +393,7 @@ class OAuth2Driver extends Homey.Driver {
         const oAuth2Callback = await this.homey.cloud.createOAuth2Callback(oAuth2AuthorizationUrl);
         oAuth2Callback
           .on('url', url => {
-            socket.emit('url', url);
+            socket.emit('url', url).catch(this.error);
           })
           .on('code', code => {
             client.getTokenByCode({ code })
@@ -405,14 +405,14 @@ class OAuth2Driver extends Homey.Driver {
                 device.oAuth2Client = client;
                 await device.onOAuth2Init();
 
-                socket.emit('authorized');
+                socket.emit('authorized').catch(this.error);
               })
               .catch(err => {
-                socket.emit('error', err.message || err.toString());
+                socket.emit('error', err.message || err.toString()).catch(this.error);
               });
           });
       } catch (err) {
-        socket.emit('error', err.message || err.toString());
+        socket.emit('error', err.message || err.toString()).catch(this.error);
       }
     };
 
