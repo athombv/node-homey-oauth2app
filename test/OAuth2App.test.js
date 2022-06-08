@@ -77,7 +77,7 @@ test('test', async function() {
             'content-type': 'application/json'
           }
         }));
-      }), id*100); // We simulate a slower call for higher ids
+      }, id*100)); // We simulate a slower call for higher ids
     });
   const promise1 = client.getLights({selector: '4'});
   const promise2 = client.getLights({selector: '3'});
