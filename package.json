@@ -19,7 +19,6 @@
     "npmPublishTagStaging": "beta"
   },
   "dependencies": {
-    "promise-queue": "^2.2.5",
     "node-fetch": "^2.3.0"
   },
   "devDependencies": {

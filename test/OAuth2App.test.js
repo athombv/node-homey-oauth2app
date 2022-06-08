@@ -64,6 +64,9 @@ test('test', async function() {
   // Now we're going to fake a token refresh
   fetch
     .mockReturnValueOnce(Promise.resolve(new Response("unauthorized", {status: 401})))
+    .mockReturnValueOnce(Promise.resolve(new Response("unauthorized", {status: 401})))
+    .mockReturnValueOnce(Promise.resolve(new Response("unauthorized", {status: 401})))
+    .mockReturnValueOnce(Promise.resolve(new Response("unauthorized", {status: 401})))
     .mockReturnValueOnce(Promise.resolve(new Response("{\"access_token\": \"access123\", \"refresh_token\": \"refresh123\"}", {headers: {
       'content-type': 'application/json'
     }})))
@@ -94,7 +97,7 @@ test('test', async function() {
   expect(l3[0].light).toBe("2");
   expect(l4.length).toBe(1);
   expect(l4[0].light).toBe("1");
-  // Because we use a prmosie-queue with max 1 execution at a time, the promises will be resolved in the order they were started
-  expect(order).toStrictEqual([4,3,2,1]);
+  // Because we no longer use a promise-queue the order in which these promises are resolved is reversed because the first promise takes longer
+  expect(order).toStrictEqual([1,2,3,4]);
 
 });
