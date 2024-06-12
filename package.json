@@ -32,7 +32,7 @@
     "jest": "^28.1.1",
     "jsdoc": "^3.6.6",
     "jsdoc-ts-utils": "^1.1.2",
-    "npm-watch": "^0.6.0",
+    "npm-watch": "^0.13.0",
     "serve": "^11.3.1",
     "watch": "^1.0.2"
   },
