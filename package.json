@@ -22,6 +22,7 @@
   "dependencies": {
     "node-fetch": "^2.3.0"
   },
+  "license": "MIT",
   "devDependencies": {
     "@athombv/jsdoc-template": "^1.6.1",
     "@types/jest": "^28.1.1",
