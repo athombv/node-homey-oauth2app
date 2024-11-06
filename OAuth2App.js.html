@@ -179,7 +179,21 @@ class OAuth2App extends Homey.App {
   /**
    * @returns {Promise&lt;void>}
    */
+  async onUninit() {
+    await this.onOAuth2Uninit();
+  }
+
+  /**
+   * @returns {Promise&lt;void>}
+   */
   async onOAuth2Init() {
+    // Overload Me
+  }
+
+  /**
+   * @returns {Promise&lt;void>}
+   */
+  async onOAuth2Uninit() {
     // Overload Me
   }
 
