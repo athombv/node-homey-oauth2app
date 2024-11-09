@@ -7,4 +7,4 @@ module.exports.OAuth2Client = require('./lib/OAuth2Client');
 module.exports.OAuth2Error = require('./lib/OAuth2Error');
 module.exports.OAuth2Token = require('./lib/OAuth2Token');
 module.exports.OAuth2Util = require('./lib/OAuth2Util');
-module.exports.fetch = require('node-fetch');
+module.exports.fetch = require('./lib/OAuth2Fetch');
