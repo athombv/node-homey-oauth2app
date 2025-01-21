@@ -137,6 +137,8 @@ const sOAuth2ConfigId = Symbol('oAuth2ConfigId');
 class OAuth2Driver extends Homey.Driver {
 
   static OAUTH2_CONFIG_ID = 'default';
+  static OAUTH2_NEW_SESSION_TITLE = 'New User';
+  static OAUTH2_NEW_SESSION_ICON = null;
 
   /**
    * @returns {Promise&lt;void>}
@@ -230,17 +232,23 @@ class OAuth2Driver extends Homey.Driver {
     const onLogin = async ({ username, password }) => {
       await client.getTokenByCredentials({ username, password });
       const session = await client.onGetOAuth2SessionInformation();
+      const sessionWasNew = OAuth2SessionId === '$new';
 
       OAuth2SessionId = session.id;
       const token = client.getToken();
       const { title } = session;
-      client.destroy();
 
-      // replace the temporary client by the final one and save it
-      client = this.homey.app.createOAuth2Client({
-        sessionId: session.id,
-        configId: OAuth2ConfigId,
-      });
+      if (sessionWasNew) {
+        // Destroy the temporary client
+        client.destroy();
+
+        // Replace the temporary client by the final one
+        client = this.homey.app.createOAuth2Client({
+          sessionId: session.id,
+          configId: OAuth2ConfigId,
+        });
+      }
+
       client.setTitle({ title });
       client.setToken({ token });
 
@@ -268,16 +276,22 @@ class OAuth2Driver extends Homey.Driver {
               .then(async () => {
                 // get the client's session info
                 const session = await client.onGetOAuth2SessionInformation();
+                const sessionWasNew = OAuth2SessionId === '$new';
                 OAuth2SessionId = session.id;
                 const token = client.getToken();
                 const { title } = session;
-                client.destroy();
 
-                // replace the temporary client by the final one and save it
-                client = this.homey.app.createOAuth2Client({
-                  sessionId: session.id,
-                  configId: OAuth2ConfigId,
-                });
+                if (sessionWasNew) {
+                  // Destroy the temporary client
+                  client.destroy();
+
+                  // Replace the temporary client by the final one
+                  client = this.homey.app.createOAuth2Client({
+                    sessionId: session.id,
+                    configId: OAuth2ConfigId,
+                  });
+                }
+
                 client.setTitle({ title });
                 client.setToken({ token });
 
@@ -316,7 +330,8 @@ class OAuth2Driver extends Homey.Driver {
       });
 
       result.push({
-        name: 'New User',
+        name: this.constructor.OAUTH2_NEW_SESSION_TITLE,
+        icon: this.constructor.OAUTH2_NEW_SESSION_ICON,
         data: {
           id: '$new',
         },
@@ -335,7 +350,12 @@ class OAuth2Driver extends Homey.Driver {
       OAuth2SessionId = id;
       this.log(`Selected session ${OAuth2SessionId}`);
 
-      if (OAuth2SessionId !== '$new') {
+      if (OAuth2SessionId === '$new') {
+        client = this.homey.app.createOAuth2Client({
+          sessionId: OAuth2Util.getRandomId(),
+          configId: OAuth2ConfigId,
+        });
+      } else {
         client = this.homey.app.getOAuth2Client({
           configId: OAuth2ConfigId,
           sessionId: OAuth2SessionId,
