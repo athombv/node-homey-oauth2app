@@ -2,6 +2,10 @@
   "name": "homey-oauth2app",
   "version": "3.7.4",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athombv/node-homey-oauth2app.git"
+  },
   "main": "index.js",
   "files": [
     "/index.js",

@@ -1,39 +1,47 @@
 name: Publish to NPM
 
 # Version: 2.0.1
-# Modified: No
+# Modified: Yes
 # Requirements:
 # - Ensure you've run `npm version major|minor|patch` on the `master` branch before merging to `production`.
+# - Configure an npm trusted publisher for athombv/node-homey-oauth2app
+#   using workflow filename publish-package-npm.yml and no environment.
 #
 # This GitHub Workflow:
 # 1. [Optional] If `npm run build` exists. If so, it runs `npm ci` and `npm run build`.
 # 2. Publishes the package to the NPM registry.
 #
 # Secrets:
-# - HOMEY_GITHUB_ACTIONS_BOT_PERSONAL_ACCESS_TOKEN
-# - NPM_AUTH_TOKEN: required for publishing to npm
 # - SLACK_WEBHOOK_URL: required for posting a message in #software
 
 # Note: when publishing a scoped npm package (e.g. @athombv/node-my-package),
 # add "publishConfig": { "access": "public" } to your package.json.
 on:
+  workflow_dispatch:
   push:
     branches:
       - production
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   publish:
     name: Publish
+    if: github.ref == 'refs/heads/production'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       # Setup
-      - name: Set up node 16 environment
-        uses: actions/setup-node@v3
+      - name: Set up node 24 environment
+        uses: actions/setup-node@v6
         with:
-          node-version: 16
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
 
       # Sets package.json name & version to environment.
       - name: Get Package Info
@@ -64,23 +72,9 @@ jobs:
             echo "'npm run build' does not exist. Skipping build..."
           fi
 
-      # Configure NPM to use the NPM Registry
-      - name: Configure NPM
-        run: |
-          npm config set registry https://registry.npmjs.org
-          npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }} -q
-
-      # Publish when this action is running on branch production.
+      # npm authenticates through the workflow's OIDC identity.
       - name: Publish
-        if: github.ref == 'refs/heads/production'
-        run: |
-          npm publish
-
-      # Publish to beta when this action is running on branch testing.
-      - name: Publish (beta)
-        if: github.ref == 'refs/heads/testing'
-        run: |
-          npm publish --tag beta
+        run: npm publish --registry https://registry.npmjs.org
 
        # Post a Slack notification on success/failure
       - name: Slack notify
