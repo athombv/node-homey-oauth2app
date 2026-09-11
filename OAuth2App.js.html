@@ -246,7 +246,7 @@ class OAuth2App extends Homey.App {
       throw new OAuth2Error('Invalid Config ID');
     }
 
-    if (this.hasConfig(configId)) {
+    if (this.hasConfig({ configId })) {
       throw new OAuth2Error('Duplicate Config ID');
     }
 
